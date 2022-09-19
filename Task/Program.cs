@@ -13,6 +13,10 @@ FillArray(array);
 
 Console.WriteLine($"\n Введённая Вами информация в формате массива: ");
 PrintArray(array);
+Console.WriteLine($"\n Отсортированный массив: ");
+Console.Write("[");
+PrintSortedArray(array);
+Console.Write("]");
 
 string InputInfo(string input)
 {
@@ -34,8 +38,17 @@ void PrintArray(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        if(i == 0) Console.Write($"[{array[i]}, ");
-        else if(i > 0 && i < arr.Length -1) Console.Write($"{array[i]}, ");
+        if (i == 0) Console.Write($"[{array[i]}\t");
+        else if (i > 0 && i < arr.Length - 1) Console.Write($"{array[i]}\t");
         else Console.Write($"{array[i]}]");
+    }
+}
+
+void PrintSortedArray(string[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (array[i].Length < 3) Console.Write($"{array[i]}\t");
+        if (array[i].Length == 3) Console.Write($"{array[i]}");
     }
 }
